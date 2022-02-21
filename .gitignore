@@ -1,0 +1,7 @@
+# Bitcoin Testing
+bitcoin/regtest/
+
+# Lightning Node 1
+lnd*/*/
+lnd*/tls.cert
+lnd*/tls.key
