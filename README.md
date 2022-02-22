@@ -12,3 +12,5 @@ This repo contains a ready-made configuration for spinning up an instance of bit
 5. Run `lnd1` to start the lightning daemon
 
 Done! You can now interact with bitcoind daemon using `btctest-cli` and interact with the lightning daemon using `lncli1` or optionally use the insomnia collection to send requests to either one.
+
+Helpful site to formulate requests to bitcoin daemon: https://chainquery.com/bitcoin-cli#
