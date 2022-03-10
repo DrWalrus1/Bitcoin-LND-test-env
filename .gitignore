@@ -5,3 +5,8 @@ bitcoin/regtest/
 lnd*/*/
 lnd*/tls.cert
 lnd*/tls.key
+
+
+# Testing
+test/node_modules/
+test/package-lock.json

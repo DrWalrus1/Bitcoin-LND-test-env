@@ -1,0 +1,19 @@
+{
+  "name": "bitcoind-regtest-test-suite",
+  "version": "0.0.0",
+  "description": "A cucumberjs test suite to ensure that bitcoin regtest nodes are functioning correctly",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [
+    "bitcoin",
+    "cucumberjs",
+    "test"
+  ],
+  "author": "Luke Lynch",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.3.2"
+  }
+}
