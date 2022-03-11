@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A cucumberjs test suite to ensure that bitcoin regtest nodes are functioning correctly",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "cucumber-js"
   },
