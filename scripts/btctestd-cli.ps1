@@ -1,0 +1,1 @@
+Invoke-Expression "bitcoin-cli -regtest -datadir=$PWD\bitcoin $args"
