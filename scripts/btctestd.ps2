@@ -1,0 +1,1 @@
+Invoke-Expression "bitcoind -regtest -datadir=$PWD\bitcoin"

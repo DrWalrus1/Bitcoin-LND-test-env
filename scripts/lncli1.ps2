@@ -1,0 +1,1 @@
+Invoke-Expression "lncli -n regtest --lnddir=$PWD\lnd1\"
