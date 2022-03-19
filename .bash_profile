@@ -1,3 +1,4 @@
+#!/bin/bash
 alias btctestd="bitcoind -regtest -datadir=$PWD/bitcoin"
 alias btctest-cli="bitcoin-cli -regtest -datadir=$PWD/bitcoin"
 
