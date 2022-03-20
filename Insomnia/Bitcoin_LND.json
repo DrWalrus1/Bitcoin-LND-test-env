@@ -1,13 +1,13 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-03-19T13:13:03.600Z",
+    "__export_date": "2022-03-20T07:28:27.891Z",
     "__export_source": "insomnia.desktop.app:v2021.7.2",
     "resources": [
         {
             "_id": "req_1a3fabed97e340218eba8ec6c1e44c59",
             "parentId": "fld_d33c5011edcd457fa76d6cd0c6411251",
-            "modified": 1647607826688,
+            "modified": 1647756271877,
             "created": 1647515237592,
             "url": "{{ _.url }}",
             "name": "help",
@@ -21,20 +21,15 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json",
-                    "id": "pair_35f99aca5da34a66b10a3d5e614e03ab"
+                    "value": "application/json"
                 },
                 {
-                    "id": "pair_6eefcab88ee14f5c9e4a5cccd800cea8",
                     "name": "Origin",
-                    "value": "http://localhost:3000",
-                    "description": ""
+                    "value": "http://localhost:3000"
                 },
                 {
-                    "id": "pair_35d7774f33654c0b9b3f03874b9c9238",
                     "name": "Host",
-                    "value": "localhost:18443",
-                    "description": ""
+                    "value": "localhost:18443"
                 }
             ],
             "authentication": {},
@@ -71,95 +66,6 @@
             "_type": "workspace"
         },
         {
-            "_id": "req_7cf1d23098834b2193fec4fc03a58e6b",
-            "parentId": "fld_d33c5011edcd457fa76d6cd0c6411251",
-            "modified": 1647609088099,
-            "created": 1647605060417,
-            "url": "http://localhost:18443",
-            "name": "help",
-            "description": "",
-            "method": "POST",
-            "body": {
-                "mimeType": "application/json",
-                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"help\",\n\t\"params\": []\n}"
-            },
-            "parameters": [],
-            "headers": [
-                {
-                    "name": "Content-Type",
-                    "value": "application/json"
-                },
-                {
-                    "name": "Host",
-                    "value": "127.0.0.1:18443"
-                },
-                {
-                    "name": "User-Agent",
-                    "value": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0"
-                },
-                {
-                    "name": "Accept",
-                    "value": "*/*"
-                },
-                {
-                    "name": "Accept-Language",
-                    "value": "en-US,en;q=0.5"
-                },
-                {
-                    "name": "Accept-Encoding",
-                    "value": "gzip, deflate"
-                },
-                {
-                    "name": "Access-Control-Request-Method",
-                    "value": "POST"
-                },
-                {
-                    "name": "Access-Control-Request-Headers",
-                    "value": "access-control-allow-origin,authorization,content-type"
-                },
-                {
-                    "name": "Referer",
-                    "value": "http://localhost:3000/"
-                },
-                {
-                    "name": "Origin",
-                    "value": "http://localhost:3000"
-                },
-                {
-                    "name": "Connection",
-                    "value": "keep-alive"
-                },
-                {
-                    "name": "Sec-Fetch-Dest",
-                    "value": "empty"
-                },
-                {
-                    "name": "Sec-Fetch-Mode",
-                    "value": "cors"
-                },
-                {
-                    "name": "Sec-Fetch-Site",
-                    "value": "cross-site"
-                }
-            ],
-            "authentication": {
-                "type": "basic",
-                "useISO88591": true,
-                "disabled": false,
-                "username": "lnd",
-                "password": "lightning"
-            },
-            "metaSortKey": -1647386105788.5,
-            "isPrivate": false,
-            "settingStoreCookies": true,
-            "settingSendCookies": true,
-            "settingDisableRenderRequestBody": false,
-            "settingEncodeUrl": true,
-            "settingRebuildPath": true,
-            "settingFollowRedirects": "global",
-            "_type": "request"
-        },
-        {
             "_id": "req_184fc8eaae3c42c38e6e443a3f53e41b",
             "parentId": "fld_d33c5011edcd457fa76d6cd0c6411251",
             "modified": 1647257023505,
@@ -191,35 +97,33 @@
             "_type": "request"
         },
         {
-            "_id": "req_1179546bcf954ac9b8442f9c78d6037a",
-            "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647606940529,
-            "created": 1645277741039,
-            "url": "{{ url }}",
-            "name": "Get Balance",
-            "description": "",
+            "_id": "req_e67f55c985ec444593d6aa47089db18a",
+            "parentId": "fld_fad67f9a177a460fbcd5ac874618d018",
+            "modified": 1647761147296,
+            "created": 1647761065397,
+            "url": "{{ url }}/wallet/testwallet",
+            "name": "Set Transaction fee",
+            "description": "```json\n{\n\t\"method\": \"sendtoaddress\",\n\tparams: [\n\t\t\"address=\"\n\t]\n}\n```",
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"getbalance\",\n\t\"params\": []\n}"
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"settxfee\",\n\t\"params\": [\n\t\t0.00001000\n\t]\n}"
             },
             "parameters": [],
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json",
-                    "id": "pair_4bf2383493bf4220a42eb17b21a9ee78"
-                },
-                {
-                    "id": "pair_ca070662109c49ed81ab9a8993ebc420",
-                    "name": "Authorization",
-                    "value": "Basic bG5kOmxpZ2h0bmluZw==",
-                    "description": "",
-                    "disabled": true
+                    "value": "application/json"
                 }
             ],
-            "authentication": {},
-            "metaSortKey": -1646161177618,
+            "authentication": {
+                "type": "basic",
+                "useISO88591": false,
+                "disabled": true,
+                "username": "",
+                "password": ""
+            },
+            "metaSortKey": -1646959362615.5,
             "isPrivate": false,
             "settingStoreCookies": true,
             "settingSendCookies": true,
@@ -228,6 +132,18 @@
             "settingRebuildPath": true,
             "settingFollowRedirects": "global",
             "_type": "request"
+        },
+        {
+            "_id": "fld_fad67f9a177a460fbcd5ac874618d018",
+            "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
+            "modified": 1647757547513,
+            "created": 1647757547513,
+            "name": "Transactions",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1647757547513,
+            "_type": "request_group"
         },
         {
             "_id": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
@@ -242,12 +158,86 @@
             "_type": "request_group"
         },
         {
-            "_id": "req_4663534d4531416abcefdf3908d5caef",
+            "_id": "req_f73e0b43d88c473ea987a1a663e7e428",
+            "parentId": "fld_fad67f9a177a460fbcd5ac874618d018",
+            "modified": 1647761218684,
+            "created": 1647761199861,
+            "url": "{{ url }}",
+            "name": "Get Raw Transaction",
+            "description": "```json\n{\n\t\"method\": \"sendtoaddress\",\n\tparams: [\n\t\t\"address=\"\n\t]\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"getrawtransaction\",\n\t\"params\": [\n\t\t\"34c55a45e70d958ebb9bf18f6cdd309456911b6153fc2207514ac145fdc4f857\"\n\t]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "content-type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "basic",
+                "useISO88591": false,
+                "disabled": true,
+                "username": "",
+                "password": ""
+            },
+            "metaSortKey": -1646959362590.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8fef60fdc8ee44f794e80e7db523419c",
+            "parentId": "fld_fad67f9a177a460fbcd5ac874618d018",
+            "modified": 1647761155557,
+            "created": 1647757557355,
+            "url": "{{ url }}/wallet/testwallet",
+            "name": "Send to Address",
+            "description": "```json\n{\n\t\"method\": \"sendtoaddress\",\n\tparams: [\n\t\t\"address=\"\n\t]\n}\n```",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"sendtoaddress\",\n\t\"params\": [\n\t\t\"bcrt1qpz38342f98j4z9fdqkwx3lyjm052vudad7c3gs\",\n\t\t1,\n\t\t\"\",\n\t\t\"Test Transaction from testwallet to testwallet2\"\n\t]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "content-type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {
+                "type": "basic",
+                "useISO88591": false,
+                "disabled": true,
+                "username": "",
+                "password": ""
+            },
+            "metaSortKey": -1646959362565.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_1179546bcf954ac9b8442f9c78d6037a",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647257349394,
-            "created": 1646916814858,
-            "url": "http://localhost:18443",
-            "name": "Get Balance - Dupe",
+            "modified": 1647761272186,
+            "created": 1645277741039,
+            "url": "{{ url }}/wallet/testwallet",
+            "name": "Get Balance",
             "description": "",
             "method": "POST",
             "body": {
@@ -258,14 +248,42 @@
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json",
-                    "id": "pair_4bf2383493bf4220a42eb17b21a9ee78"
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1646161177618,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_4663534d4531416abcefdf3908d5caef",
+            "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
+            "modified": 1647758820252,
+            "created": 1646916814858,
+            "url": "http://localhost:18443",
+            "name": "Get Wallet Info",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"getwalletinfo\",\n\t\"params\": []\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "content-type",
+                    "value": "application/json"
                 },
                 {
-                    "id": "pair_ca070662109c49ed81ab9a8993ebc420",
                     "name": "Authorization",
-                    "value": "Basic bG5kOmxpZ2h0bmluZw==",
-                    "description": ""
+                    "value": "Basic bG5kOmxpZ2h0bmluZw=="
                 }
             ],
             "authentication": {},
@@ -282,22 +300,21 @@
         {
             "_id": "req_433d10f64d374154a98a1879e195e781",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647257349996,
+            "modified": 1647759339806,
             "created": 1645407085106,
-            "url": "{{ url }}",
+            "url": "{{ url }}/wallet/testwallet",
             "name": "Get New Address",
             "description": "",
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"getnewaddress\",\n\t\"params\": []\n}"
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"getnewaddress\",\n\t\"params\": [\n\t]\n}"
             },
             "parameters": [],
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json",
-                    "id": "pair_4bf2383493bf4220a42eb17b21a9ee78"
+                    "value": "application/json"
                 }
             ],
             "authentication": {
@@ -318,9 +335,40 @@
             "_type": "request"
         },
         {
+            "_id": "req_119f19628fdf4053ae011b1f9035dced",
+            "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
+            "modified": 1647756242418,
+            "created": 1647756208722,
+            "url": "{{ _.url }}",
+            "name": "Create Wallet",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"createwallet\",\n\t\"params\": [\n\t\t\"testwallet2\"\n\t]\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1646161177543,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
             "_id": "req_2548700a28d64e7c84ab4e269910eb78",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647609266116,
+            "modified": 1647758818903,
             "created": 1645364845710,
             "url": "{{ url }}",
             "name": "Load Wallet",
@@ -357,7 +405,7 @@
         {
             "_id": "req_5ab00201223f42a2bfe31f44daec1028",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647695570832,
+            "modified": 1647758818476,
             "created": 1647602317867,
             "url": "{{ url }}",
             "name": "Unload Wallet",
@@ -394,7 +442,7 @@
         {
             "_id": "req_53dcbd65e9ef47d09489339db69fbb92",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647607044044,
+            "modified": 1647758816377,
             "created": 1645407469566,
             "url": "{{ url }}",
             "name": "Get Blockchain info",
@@ -408,8 +456,7 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json",
-                    "id": "pair_e6689ecdc0814b8dbfe6ff678fd6cdab"
+                    "value": "application/json"
                 }
             ],
             "authentication": {},
@@ -438,7 +485,7 @@
         {
             "_id": "req_0ca4a7befcc143a39eccc932b017d6c8",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647515149425,
+            "modified": 1647758814911,
             "created": 1645406994172,
             "url": "http://lnd:lightning@localhost:18443",
             "name": "Generate Blocks (REGTEST)",
@@ -452,8 +499,7 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json",
-                    "id": "pair_e6689ecdc0814b8dbfe6ff678fd6cdab"
+                    "value": "application/json"
                 }
             ],
             "authentication": {},
@@ -470,7 +516,7 @@
         {
             "_id": "req_0411b223296d4d4bb2098a3dcf2f9687",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647257912241,
+            "modified": 1647758815416,
             "created": 1645407379810,
             "url": "{{ url }}",
             "name": "Get Best Block Hash",
@@ -484,8 +530,7 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json",
-                    "id": "pair_e6689ecdc0814b8dbfe6ff678fd6cdab"
+                    "value": "application/json"
                 }
             ],
             "authentication": {},
