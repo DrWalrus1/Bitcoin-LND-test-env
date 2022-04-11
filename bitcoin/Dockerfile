@@ -12,10 +12,12 @@ RUN apt update
 
 RUN apt install bitcoind -y
 
-COPY bitcoin/bitcoin.conf .
+VOLUME /bitcoin
 
-COPY bitcoin/transaction.sh .
+COPY ./bitcoin.conf .
 
-EXPOSE 8332 8333 18332 18333
+COPY ./transaction.sh .
+
+EXPOSE 8332 18333 38333 18443 18444
 
 CMD [ "bitcoind", "-regtest", "-datadir=/bitcoin"]

@@ -2,7 +2,7 @@ FROM lightninglabs/lnd:v0.14.1-beta
 
 WORKDIR /lnd
 
-COPY lnd1/lnd.conf .
+COPY ./lnd.conf .
 
 EXPOSE 80
 

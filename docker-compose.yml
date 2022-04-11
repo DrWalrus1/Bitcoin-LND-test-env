@@ -1,0 +1,15 @@
+volumes:
+  bitcoin-home:
+
+
+services:
+  bitcoind:
+    image: lukelynch-io/bitcoind-regtest:v0.1
+    ports:
+      - "8332:8332"
+      - "1333:18333"
+      - "38333:18333"
+      - "18333:18333"
+      - "18443:18443"
+    volumes:
+      - bitcoin-home:/bitcoin
