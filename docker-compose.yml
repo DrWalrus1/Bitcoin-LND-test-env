@@ -1,9 +1,12 @@
+version: '3.0'
+
 volumes:
   bitcoin-home:
 
-
 services:
   bitcoind:
+    container_name: bitcoin
+    hostname: bitcoin.local
     image: lukelynch-io/bitcoind-regtest:v0.1
     ports:
       - "8332:8332"
@@ -11,5 +14,18 @@ services:
       - "38333:18333"
       - "18333:18333"
       - "18443:18443"
+      - "28332:28332"
+      - "28333:28333"
+    volumes:
+      - bitcoin-home:/bitcoin
+
+  lnd:
+    container_name: lnd
+    hostname: lnd.local
+    image: lukelynch-io/lnd-regtest:v0.1
+    ports:
+      - "80:80"
+      - "10009:10009"
+      - "8080:8080"
     volumes:
       - bitcoin-home:/bitcoin

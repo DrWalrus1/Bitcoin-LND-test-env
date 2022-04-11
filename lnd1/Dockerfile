@@ -1,9 +1,0 @@
-FROM lightninglabs/lnd:v0.14.1-beta
-
-WORKDIR /lnd
-
-COPY ./lnd.conf .
-
-EXPOSE 80
-
-CMD [ "lnd", "--lnddir=/lnd"]
