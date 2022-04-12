@@ -2,6 +2,7 @@ version: '3.0'
 
 volumes:
   bitcoin-home:
+  lnd-home:
 
 services:
   bitcoind:
@@ -24,8 +25,9 @@ services:
     hostname: lnd.local
     image: lukelynch-io/lnd-regtest:v0.1
     ports:
-      - "80:80"
-      - "10009:10009"
       - "8080:8080"
+      - "9735:9735"
+      - "10009:10009"
     volumes:
       - bitcoin-home:/bitcoin
+      - lnd-home:/lnd

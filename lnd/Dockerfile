@@ -8,8 +8,10 @@ WORKDIR /lnd
 
 VOLUME /bitcoin
 
+VOLUME /lnd
+
 COPY ./lnd.conf .
 
-EXPOSE 80 10009 8080
+EXPOSE 8080
 
 CMD [ "lnd", "--lnddir=/lnd"]
