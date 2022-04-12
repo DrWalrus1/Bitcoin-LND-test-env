@@ -1,13 +1,141 @@
 {
     "_type": "export",
     "__export_format": 4,
-    "__export_date": "2022-03-20T07:28:27.891Z",
-    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "__export_date": "2022-04-12T13:35:21.068Z",
+    "__export_source": "insomnia.desktop.app:v2022.2.1",
     "resources": [
+        {
+            "_id": "req_7842bed37eaf41679612a76a1f056cc5",
+            "parentId": "fld_4f06151438d240d79ec4b806255882eb",
+            "modified": 1649769947662,
+            "created": 1649684087857,
+            "url": "https://127.0.0.1:8080/v1/balance/blockchain",
+            "name": "Blockchain Balance",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_2149880f22304f53bcf6f1236099cfc6",
+                    "name": "Grpc-Metadata-macaroon",
+                    "value": "{{ _.lnd.admin.macaroon }}",
+                    "description": ""
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1649684087857,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_4f06151438d240d79ec4b806255882eb",
+            "parentId": "wrk_902b5114f38a458b9114c5732ddf6abc",
+            "modified": 1649770167157,
+            "created": 1649684083162,
+            "name": "Lightning",
+            "description": "Source: https://api.lightning.community/?shell#lnd-rest-api-reference",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1649684083162,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_902b5114f38a458b9114c5732ddf6abc",
+            "parentId": null,
+            "modified": 1645314632919,
+            "created": 1645277733897,
+            "name": "Bitcoin and Lnd",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_f1cce89a0eda4c45821c6fa4861856d2",
+            "parentId": "fld_4f06151438d240d79ec4b806255882eb",
+            "modified": 1649770454370,
+            "created": 1649769643385,
+            "url": "https://127.0.0.1:8080/v1/newaddress",
+            "name": "New Address",
+            "description": "- p2wkh:  Pay to witness key hash\n- np2wkh: Pay to nested witness key hash\n- p2tr:   Pay to taproot pubkey",
+            "method": "GET",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"type\": \"p2tr\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_2149880f22304f53bcf6f1236099cfc6",
+                    "name": "Grpc-Metadata-macaroon",
+                    "value": "{{ _.lnd.admin.macaroon }}",
+                    "description": ""
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_ddd16a21fde34550823bacdc31bdfa90"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1649618788285,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_c503e56ad4ce4f0f9a20bea110535254",
+            "parentId": "fld_4f06151438d240d79ec4b806255882eb",
+            "modified": 1649770451103,
+            "created": 1649769805211,
+            "url": "https://127.0.0.1:8080/v1/unlockwallet",
+            "name": "Unlock Wallet",
+            "description": "- p2wkh:  Pay to witness key hash\n- np2wkh: Pay to nested witness key hash\n- p2tr:   Pay to taproot pubkey",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"wallet_password\": \"{{ _.lnd.wallet.Password }}\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_2149880f22304f53bcf6f1236099cfc6",
+                    "name": "Grpc-Metadata-macaroon",
+                    "value": "{{ _.lnd.admin.macaroon }}",
+                    "description": ""
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_ddd16a21fde34550823bacdc31bdfa90"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1649586138499,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
         {
             "_id": "req_1a3fabed97e340218eba8ec6c1e44c59",
             "parentId": "fld_d33c5011edcd457fa76d6cd0c6411251",
-            "modified": 1647756271877,
+            "modified": 1649684640372,
             "created": 1647515237592,
             "url": "{{ _.url }}",
             "name": "help",
@@ -21,15 +149,18 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_40b4ae2b80fa4405b895eba57cd507f6"
                 },
                 {
                     "name": "Origin",
-                    "value": "http://localhost:3000"
+                    "value": "http://localhost:3000",
+                    "id": "pair_bcb73b78b63c441f98d9960c4c6d889a"
                 },
                 {
                     "name": "Host",
-                    "value": "localhost:18443"
+                    "value": "localhost:18443",
+                    "id": "pair_59806aea3e1c4beeb8cb2bb0a5e12424"
                 }
             ],
             "authentication": {},
@@ -54,16 +185,6 @@
             "environmentPropertyOrder": null,
             "metaSortKey": -1646915018008,
             "_type": "request_group"
-        },
-        {
-            "_id": "wrk_902b5114f38a458b9114c5732ddf6abc",
-            "parentId": null,
-            "modified": 1645314632919,
-            "created": 1645277733897,
-            "name": "Bitcoin and Lnd",
-            "description": "",
-            "scope": "collection",
-            "_type": "workspace"
         },
         {
             "_id": "req_184fc8eaae3c42c38e6e443a3f53e41b",
@@ -234,9 +355,9 @@
         {
             "_id": "req_1179546bcf954ac9b8442f9c78d6037a",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647761272186,
+            "modified": 1649686175195,
             "created": 1645277741039,
-            "url": "{{ url }}/wallet/testwallet",
+            "url": "{{ url }}/wallet/testwallet2",
             "name": "Get Balance",
             "description": "",
             "method": "POST",
@@ -248,7 +369,8 @@
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_a8dcd8d671d649ac9ad62592672dba72"
                 }
             ],
             "authentication": {},
@@ -265,7 +387,7 @@
         {
             "_id": "req_4663534d4531416abcefdf3908d5caef",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647758820252,
+            "modified": 1649759627274,
             "created": 1646916814858,
             "url": "http://localhost:18443",
             "name": "Get Wallet Info",
@@ -279,11 +401,13 @@
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_d1181ff5211241e18ccb3780ee23c9b7"
                 },
                 {
                     "name": "Authorization",
-                    "value": "Basic bG5kOmxpZ2h0bmluZw=="
+                    "value": "Basic bG5kOmxpZ2h0bmluZw==",
+                    "id": "pair_0c698add1dbf4c72a3e97fdb38412c02"
                 }
             ],
             "authentication": {},
@@ -300,7 +424,7 @@
         {
             "_id": "req_433d10f64d374154a98a1879e195e781",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647759339806,
+            "modified": 1649759633635,
             "created": 1645407085106,
             "url": "{{ url }}/wallet/testwallet",
             "name": "Get New Address",
@@ -314,7 +438,8 @@
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_59f0183d54b14ba398c73a0a4524a50d"
                 }
             ],
             "authentication": {
@@ -337,21 +462,22 @@
         {
             "_id": "req_119f19628fdf4053ae011b1f9035dced",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647756242418,
+            "modified": 1649759620626,
             "created": 1647756208722,
-            "url": "{{ _.url }}",
+            "url": "http://lnd:lightning@localhost:18443",
             "name": "Create Wallet",
             "description": "",
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"createwallet\",\n\t\"params\": [\n\t\t\"testwallet2\"\n\t]\n}"
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"createwallet\",\n\t\"params\": [\n\t\t\"testwallet\"\n\t]\n}"
             },
             "parameters": [],
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_ba04b367a0554b9ba4e137ca8884d177"
                 }
             ],
             "authentication": {},
@@ -368,7 +494,7 @@
         {
             "_id": "req_2548700a28d64e7c84ab4e269910eb78",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647758818903,
+            "modified": 1649769653004,
             "created": 1645364845710,
             "url": "{{ url }}",
             "name": "Load Wallet",
@@ -382,7 +508,8 @@
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_a91fdc91d9ba4bc4883ae326f241ab5e"
                 }
             ],
             "authentication": {
@@ -405,7 +532,7 @@
         {
             "_id": "req_5ab00201223f42a2bfe31f44daec1028",
             "parentId": "fld_0a5d62759bf443d5b6af8e185e1b7d54",
-            "modified": 1647758818476,
+            "modified": 1649686259262,
             "created": 1647602317867,
             "url": "{{ url }}",
             "name": "Unload Wallet",
@@ -413,13 +540,14 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"unloadwallet\",\n\t\"params\": [\n\t\t\"testwallet\"\n\t]\n}"
+                "text": "{\n\t\"jsonrpc\": \"1.0\",\n\t\"id\": \"curltext\",\n\t\"method\": \"unloadwallet\",\n\t\"params\": [\n\t\t\"testwallet2\"\n\t]\n}"
             },
             "parameters": [],
             "headers": [
                 {
                     "name": "content-type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_d0cc77a1252e420ba06a5d2e8415ea09"
                 }
             ],
             "authentication": {
@@ -442,7 +570,7 @@
         {
             "_id": "req_53dcbd65e9ef47d09489339db69fbb92",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647758816377,
+            "modified": 1649686178820,
             "created": 1645407469566,
             "url": "{{ url }}",
             "name": "Get Blockchain info",
@@ -456,7 +584,8 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_b605dc0ed33a4e1a86e5f9a78209bb11"
                 }
             ],
             "authentication": {},
@@ -485,7 +614,7 @@
         {
             "_id": "req_0ca4a7befcc143a39eccc932b017d6c8",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647758814911,
+            "modified": 1649759640740,
             "created": 1645406994172,
             "url": "http://lnd:lightning@localhost:18443",
             "name": "Generate Blocks (REGTEST)",
@@ -499,7 +628,8 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_d83957e460274e80b585fa1ca91fd42b"
                 }
             ],
             "authentication": {},
@@ -516,7 +646,7 @@
         {
             "_id": "req_0411b223296d4d4bb2098a3dcf2f9687",
             "parentId": "fld_78b64e30b7394b0db21911dc11eeaf33",
-            "modified": 1647758815416,
+            "modified": 1649686151353,
             "created": 1645407379810,
             "url": "{{ url }}",
             "name": "Get Best Block Hash",
@@ -530,7 +660,8 @@
             "headers": [
                 {
                     "name": "Content-Type",
-                    "value": "application/json"
+                    "value": "application/json",
+                    "id": "pair_53425892f982493ba40b66dd8598d155"
                 }
             ],
             "authentication": {},
@@ -547,15 +678,34 @@
         {
             "_id": "env_16ff0b2b0873895b64a566fe37c5f779f57788b7",
             "parentId": "wrk_902b5114f38a458b9114c5732ddf6abc",
-            "modified": 1645407531655,
+            "modified": 1649769947120,
             "created": 1645277733903,
             "name": "Base Environment",
             "data": {
-                "url": "http://lnd:lightning@localhost:18443"
+                "url": "http://lnd:lightning@localhost:18443",
+                "lnd": {
+                    "admin": {
+                        "macaroon": "0201036c6e6402f801030a10f09ef59fb747545b1703cf47976f94dc1201301a160a0761646472657373120472656164120577726974651a130a04696e666f120472656164120577726974651a170a08696e766f69636573120472656164120577726974651a210a086d616361726f6f6e120867656e6572617465120472656164120577726974651a160a076d657373616765120472656164120577726974651a170a086f6666636861696e120472656164120577726974651a160a076f6e636861696e120472656164120577726974651a140a057065657273120472656164120577726974651a180a067369676e6572120867656e657261746512047265616400000620aa5f7c567ff24e3b4850d95119e881a65a294fd647d1c7dcbc1dd402f7397bba"
+                    },
+                    "wallet": {
+                        "Password": "{% base64 'encode', 'normal', 'Password1' %}"
+                    }
+                }
             },
             "dataPropertyOrder": {
                 "&": [
-                    "url"
+                    "url",
+                    "lnd"
+                ],
+                "&~|lnd": [
+                    "admin",
+                    "wallet"
+                ],
+                "&~|lnd~|admin": [
+                    "macaroon"
+                ],
+                "&~|lnd~|wallet": [
+                    "Password"
                 ]
             },
             "color": null,
@@ -585,7 +735,7 @@
         {
             "_id": "env_cf552568cd394df19ad90dfb976ceead",
             "parentId": "env_16ff0b2b0873895b64a566fe37c5f779f57788b7",
-            "modified": 1646917816641,
+            "modified": 1649769909871,
             "created": 1645407533641,
             "name": "Sub",
             "data": {},
