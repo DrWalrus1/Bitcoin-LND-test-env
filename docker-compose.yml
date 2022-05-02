@@ -10,11 +10,8 @@ services:
     hostname: bitcoin.local
     image: lukelynch-io/bitcoind-regtest:v0.1
     ports:
-      - "8332:8332"
-      - "1333:18333"
-      - "38333:18333"
-      - "18333:18333"
       - "18443:18443"
+      - "18444:18444"
       - "28332:28332"
       - "28333:28333"
     volumes:

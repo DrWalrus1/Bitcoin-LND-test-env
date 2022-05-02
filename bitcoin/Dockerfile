@@ -18,6 +18,10 @@ COPY ./bitcoin.conf .
 
 COPY ./transaction.sh .
 
-EXPOSE 8332 18333 38333 18443 18444 28332 28333
+COPY ./bitcoin /bin/bitcoin
+
+RUN chmod u+x /bin/bitcoin
+
+EXPOSE 18443 18444 28332 28333
 
 CMD [ "bitcoind", "-regtest", "-datadir=/bitcoin"]
