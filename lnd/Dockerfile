@@ -1,6 +1,6 @@
-FROM lightninglabs/lnd:v0.14.1-beta
+FROM lightninglabs/lnd:v0.15.0-beta
 
-WORKDIR /lnd
+WORKDIR /root/.lnd
 
 # RUN apt update
 
@@ -8,10 +8,10 @@ WORKDIR /lnd
 
 VOLUME /bitcoin
 
-VOLUME /lnd
+VOLUME /root/.lnd
 
 COPY ./lnd.conf .
 
 EXPOSE 8080
 
-CMD [ "lnd", "--lnddir=/lnd"]
+CMD [ "lnd" ]

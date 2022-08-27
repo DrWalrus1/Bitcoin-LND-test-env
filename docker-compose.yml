@@ -20,7 +20,7 @@ services:
   lnd:
     container_name: lnd
     hostname: lnd.local
-    image: lukelynch-io/lnd-regtest:v0.1
+    image: lukelynch-io/lnd-regtest:v0.2
     ports:
       - "8080:8080"
       - "9735:9735"
